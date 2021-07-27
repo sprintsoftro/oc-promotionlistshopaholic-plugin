@@ -1,0 +1,6 @@
+plugin:
+    name: 'sprintsoft.promotionslist::lang.plugin.name'
+    description: 'sprintsoft.promotionslist::lang.plugin.description'
+    author: Sprintsoft
+    icon: oc-icon-money
+    homepage: ''
