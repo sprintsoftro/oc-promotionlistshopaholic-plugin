@@ -28,10 +28,6 @@ class ExtendProductCollection
         $obList->addDynamicMethod('isOnPromotion', function () use ($obList) {
 
             $arResultIDList = OfferListStore::instance()->is_promotion->get();
-// dump('ajungem aici');
-            // dd($arResultIDList);
-
-            // return $obOfferList->intersect($arResultIDList);
 
             return $obList->intersect($arResultIDList);
         });

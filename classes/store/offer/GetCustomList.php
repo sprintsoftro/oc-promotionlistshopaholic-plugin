@@ -17,7 +17,7 @@ class GetCustomList extends AbstractStoreWithoutParam
      */
     protected function getIDListFromDB() : array
     {
-        $arElementIDList = (array) Offer::where('is_promotion', true)->lists('id');
+        $arElementIDList = (array) Offer::where('is_promotion', true)->lists('product_id');
 
         return $arElementIDList;
     }
