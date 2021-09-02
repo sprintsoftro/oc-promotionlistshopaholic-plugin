@@ -5,6 +5,7 @@ use Lovata\Toolbox\Classes\Event\ModelHandler;
 use Lovata\Shopaholic\Models\Offer;
 use Lovata\Shopaholic\Classes\Item\OfferItem;
 use Sprintsoft\PromotionsList\Classes\Store\OfferListStore;
+use Lovata\Shopaholic\Models\Price;
 
 /**
  * Class ExtendOfferModel
@@ -27,6 +28,10 @@ class ExtendOfferModel extends ModelHandler
             $obOffer->fillable[] = 'is_promotion';
 
             $obOffer->addCachedField(['is_promotion']);
+
+
+
+            $this->beforeSaveEvent($obOffer);
         });
     }
 
@@ -37,6 +42,18 @@ class ExtendOfferModel extends ModelHandler
     {
         $this->checkFieldChanges('is_promotion', OfferListStore::instance()->is_promotion);
     }
+
+    protected function beforeSaveEvent($model)
+    {
+        $model->bindEvent('model.beforeSave', function () use ($model) {
+            $obMainPrice  = $model->main_price;
+            if($obMainPrice->old_price > $obMainPrice->price){
+                $model->is_promotion = true;
+            } else {
+                $model->is_promotion = false;
+            }
+        });
+      }
 
     /**
      * After delete event handler
