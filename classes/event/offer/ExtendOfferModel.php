@@ -47,7 +47,7 @@ class ExtendOfferModel extends ModelHandler
     {
         $model->bindEvent('model.beforeSave', function () use ($model) {
             $obMainPrice  = $model->main_price;
-            if($obMainPrice->old_price > $obMainPrice->price){
+            if(!empty($obMainPrice) && $obMainPrice->old_price > $obMainPrice->price){
                 $model->is_promotion = true;
             } else {
                 $model->is_promotion = false;
