@@ -29,9 +29,7 @@ class ExtendOfferModel extends ModelHandler
 
             $obOffer->addCachedField(['is_promotion']);
 
-
-
-            $this->beforeSaveEvent($obOffer);
+            $this->beofreSaveEvent($obOffer);
         });
     }
 
@@ -43,18 +41,10 @@ class ExtendOfferModel extends ModelHandler
         $this->checkFieldChanges('is_promotion', OfferListStore::instance()->is_promotion);
     }
 
-    protected function beforeSaveEvent($model)
+    protected function beofreSaveEvent($model)
     {
         $model->bindEvent('model.beforeSave', function () use ($model) {
-            $obMainPrice  = $model->main_price;
-
-            if(empty($obMainPrice)) {
-                return;
-            }
-            $oldPrice = $obMainPrice->old_price_value;
-            $price = $obMainPrice->price_value;
-
-            if($oldPrice > $price){
+            if($model->price_value && $model->old_price_value > $model->price_value){
                 $model->is_promotion = true;
             } else {
                 $model->is_promotion = false;
