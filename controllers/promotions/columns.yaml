@@ -1,0 +1,35 @@
+columns:
+    name:
+        label: 'lovata.toolbox::lang.field.name'
+        type: text
+        searchable: true
+        sortable: true
+    code:
+        label: 'lovata.shopaholic::lang.field.vendor_code'
+        type: text
+        searchable: true
+        sortable: true
+    category_name:
+        label: 'lovata.toolbox::lang.field.category'
+        type: text
+        searchable: true
+        sortable: true
+        relation: category
+        select: name
+    active:
+        label: 'lovata.toolbox::lang.field.active'
+        type: switch
+        searchable: false
+        sortable: true
+    price:
+        label: 'Pret'
+        type: input
+        searchable: false
+        sortable: false
+        cssClass: update-on-click-out
+    old_price:
+        label: 'Pret Vechi'
+        type: input
+        searchable: false
+        sortable: false
+        cssClass: update-on-click-out

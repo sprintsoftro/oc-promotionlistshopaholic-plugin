@@ -1,0 +1,14 @@
+title: 'Promotions List'
+modelClass: Lovata\Shopaholic\Models\Product
+list: $/sprintsoft/promotionslist/controllers/promotions/columns.yaml
+noRecordsMessage: 'backend::lang.list.no_records'
+recordUrl: 'lovata/shopaholic/products/update/:id'
+recordsPerPage: '20'
+showSetup: true
+showCheckboxes: false
+showSorting: 1
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+filter: _config_filter.yaml

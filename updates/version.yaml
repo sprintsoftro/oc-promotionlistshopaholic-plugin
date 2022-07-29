@@ -1,3 +1,5 @@
 1.0.0:
     - 'Initialize plugin.'
     - update_table_offers_1.php
+1.0.1:
+    - 'Add promotions list'
