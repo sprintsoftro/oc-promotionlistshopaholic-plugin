@@ -2,7 +2,7 @@
 
 use Lovata\Toolbox\Classes\Event\ModelHandler;
 use Lovata\Shopaholic\Models\Product;
-use SprintSoft\PromotionsList\Classes\Item\ProductItem;
+use Lovata\Shopaholic\Classes\Item\ProductItem;
 use Lovata\Toolbox\Classes\Helper\PriceHelper;
 
 /**
