@@ -29,7 +29,7 @@ class ExtendOfferModel extends ModelHandler
 
             $obOffer->addCachedField(['is_promotion']);
 
-            $this->beofreSaveEvent($obOffer);
+            // $this->beofreSaveEvent($obOffer);
         });
     }
 
@@ -40,17 +40,18 @@ class ExtendOfferModel extends ModelHandler
     {
         $this->checkFieldChanges('is_promotion', OfferListStore::instance()->is_promotion);
     }
-
-    protected function beofreSaveEvent($model)
-    {
-        $model->bindEvent('model.beforeSave', function () use ($model) {
-            if($model->price_value && $model->old_price_value > $model->price_value){
-                $model->is_promotion = true;
-            } else {
-                $model->is_promotion = false;
-            }
-        });
-      }
+    
+    // Am dezactivat pentru ca am mutat functionalitatea in octav la sync dar pe viitor poate ne trebuie
+    // protected function beofreSaveEvent($model)
+    // {
+    //     $model->bindEvent('model.beforeSave', function () use ($model) {
+    //         if($model->price_value && $model->old_price_value > $model->price_value){
+    //             $model->is_promotion = true;
+    //         } else {
+    //             $model->is_promotion = false;
+    //         }
+    //     });
+    // }
 
     /**
      * After delete event handler

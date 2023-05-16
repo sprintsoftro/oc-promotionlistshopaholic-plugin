@@ -1,6 +1,7 @@
 <?php namespace Sprintsoft\PromotionsList;
 
 use Event;
+use Sprintsoft\PromotionsList\Classes\Event\Offer\ExtendOfferFieldsHandler;
 use System\Classes\PluginBase;
 use Sprintsoft\PromotionsList\Classes\Event\Offer\ExtendOfferModel;
 use Sprintsoft\PromotionsList\Classes\Event\Product\ExtendProductCollection;
@@ -13,6 +14,7 @@ class Plugin extends PluginBase
         Event::subscribe(ExtendOfferModel::class);
         Event::subscribe(ExtendProductCollection::class);
         Event::subscribe(ProductModelHandler::class);
+        Event::subscribe(ExtendOfferFieldsHandler::class);
 
         $this->productConfiguratorSubscribe();
     }
