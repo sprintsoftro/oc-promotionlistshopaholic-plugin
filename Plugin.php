@@ -5,7 +5,7 @@ use Sprintsoft\PromotionsList\Classes\Event\Offer\ExtendOfferFieldsHandler;
 use System\Classes\PluginBase;
 use Sprintsoft\PromotionsList\Classes\Event\Offer\ExtendOfferModel;
 use Sprintsoft\PromotionsList\Classes\Event\Product\ExtendProductCollection;
-use SprintSoft\PromotionsList\Classes\Event\Product\ProductModelHandler;
+use Sprintsoft\PromotionsList\Classes\Event\Product\ProductModelHandler;
 
 class Plugin extends PluginBase
 {

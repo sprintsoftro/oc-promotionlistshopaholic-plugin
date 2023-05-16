@@ -1,4 +1,4 @@
-<?php namespace SprintSoft\PromotionsList\Classes\Event\Product;
+<?php namespace Sprintsoft\PromotionsList\Classes\Event\Product;
 
 use Lovata\Toolbox\Classes\Event\ModelHandler;
 use Lovata\Shopaholic\Models\Product;
